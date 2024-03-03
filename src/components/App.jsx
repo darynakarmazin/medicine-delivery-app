@@ -1,20 +1,25 @@
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import ShopsPage from "../pages/ShopsPage";
 import ShoppingCartPage from "../pages/ShoppingCartPage";
+import MedicineList from "./MedicineList/MedicineList";
+import Navigation from "./Navigation/Navigation";
 
 function App() {
   return (
-    <div>
-      <nav>
-        <NavLink to="/">Shops</NavLink>
-        {" | "}
-        <NavLink to="/shopping-cart">Shopping cart</NavLink>
-      </nav>
-      <Routes>
-        <Route path="/" element={<ShopsPage />} />
-        <Route path="/shopping-cart" element={<ShoppingCartPage />} />
-      </Routes>
-    </div>
+    <>
+      <header>
+        <Navigation />
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<ShopsPage />}>
+            <Route path=":shopId" element={<MedicineList />} />
+          </Route>
+          <Route path="/shopping-cart" element={<ShoppingCartPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
+    </>
   );
 }
 
