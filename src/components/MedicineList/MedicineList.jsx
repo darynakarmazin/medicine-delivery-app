@@ -31,8 +31,8 @@ function MedicineList() {
       <ul>
         {medicines.map((medicine) => {
           return (
-            <li key={medicine.id}>
-              <p>{medicine.name}</p>
+            <li key={medicine._id}>
+              <p>{medicine.title}</p>
               <p>{medicine.price}</p>
             </li>
           );
