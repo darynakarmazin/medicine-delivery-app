@@ -31,7 +31,7 @@ function ShopsPage() {
 
   return (
     <div>
-      ShopsPage
+      <p> Shops:</p>
       <ul>
         {shops.map((shop) => {
           return (
