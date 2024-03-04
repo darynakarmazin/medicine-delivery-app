@@ -1,43 +1,35 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { selectIsLoading, selectMedicines } from "../../redux/selectors";
+import { setMedicines } from "../../redux/catalog/operations";
 
 function MedicineList() {
   const { shopId } = useParams();
+  const dispatch = useDispatch();
 
-  const [medicines, setMedicines] = useState([]);
+  const isLoading = useSelector(selectIsLoading);
+  const medicines = useSelector(selectMedicines);
 
   useEffect(() => {
-    const fetchDataMedicines = async () => {
-      const fetchData = async () => {
-        try {
-          const response = await axios.get(
-            `https://medicine-delivery-app-backend-o7a6.onrender.com/api/medicines/?_id=${shopId}`
-          );
-          return response.data.data.result;
-        } catch (error) {
-          console.error("Помилка при виконанні запиту:", error);
-        }
-      };
-      const result = await fetchData();
-      setMedicines(result);
-    };
-    fetchDataMedicines();
-  }, [shopId]);
+    dispatch(setMedicines(shopId));
+  }, [dispatch, shopId]);
 
   return (
     <div>
-      Це магазин {shopId} і список його медикаментів
-      <ul>
-        {medicines.map((medicine) => {
-          return (
-            <li key={medicine._id}>
-              <p>{medicine.title}</p>
-              <p>{medicine.price}</p>
-            </li>
-          );
-        })}
-      </ul>
+      {medicines && (
+        <ul>
+          {medicines.map((medicine) => {
+            return (
+              <li key={medicine._id}>
+                <p>{medicine.title}</p>
+                <p>{medicine.price}</p>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+      {isLoading && <div> завантаженя...</div>}
     </div>
   );
 }

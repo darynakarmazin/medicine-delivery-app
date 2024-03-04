@@ -1,46 +1,34 @@
-import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { selectIsLoading, selectShops } from "../redux/selectors";
+import { useEffect } from "react";
+import { setShops } from "../redux/catalog/operations.js";
 
 function ShopsPage() {
-  // const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   navigate("/shop1");
-  // }, []);
-
-  const [shops, setShops] = useState([]);
+  const isLoading = useSelector(selectIsLoading);
+  const shops = useSelector(selectShops);
 
   useEffect(() => {
-    const fetchDataShops = async () => {
-      const fetchData = async () => {
-        try {
-          const response = await axios.get(
-            "https://medicine-delivery-app-backend-o7a6.onrender.com/api/shops"
-          );
-          return response.data.data.result;
-        } catch (error) {
-          console.error("Помилка при виконанні запиту:", error);
-        }
-      };
-      const result = await fetchData();
-      setShops(result);
-    };
-    fetchDataShops();
-  }, []);
+    dispatch(setShops());
+  }, [dispatch]);
 
   return (
     <div>
       <p> Shops:</p>
-      <ul>
-        {shops.map((shop) => {
-          return (
-            <li key={`${shop._id}`}>
-              <NavLink to={`${shop._id}`}>{shop.name}</NavLink>
-            </li>
-          );
-        })}
-      </ul>
+      {shops && (
+        <ul>
+          {shops.map((shop) => {
+            return (
+              <li key={`${shop._id}`}>
+                <NavLink to={`${shop._id}`}>{shop.name}</NavLink>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+      {isLoading && <div> завантаженя...</div>}
       <Outlet />
     </div>
   );
