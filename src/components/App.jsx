@@ -8,13 +8,13 @@ function App() {
   return (
     <>
       <Navigation />
-      <main>
+      <main className="container">
         <Routes>
-          <Route path="/" element={<ShopsPage />}>
+          <Route path="/shops" element={<ShopsPage />}>
             <Route path=":shopId" element={<MedicineList />} />
           </Route>
           <Route path="/shopping-cart" element={<ShoppingCartPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/shops" replace />} />
         </Routes>
       </main>
     </>

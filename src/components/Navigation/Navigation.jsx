@@ -15,7 +15,7 @@ function Navigation() {
           Meds Delivery
         </LogoNavLink>
         <NavigationLinks>
-          <NavLink to="/">Shops</NavLink>
+          <NavLink to="/shops">Shops</NavLink>
           {" | "}
           <NavLink to="/shopping-cart">Shopping cart</NavLink>
         </NavigationLinks>

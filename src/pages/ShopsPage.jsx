@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoading, selectShops } from "../redux/selectors";
 import { useEffect } from "react";
 import { setShops } from "../redux/catalog/operations.js";
+import {
+  PageContainer,
+  ShopsContainer,
+} from "../components/Container/Container.styled.jsx";
 
 function ShopsPage() {
   const dispatch = useDispatch();
@@ -15,22 +19,24 @@ function ShopsPage() {
   }, [dispatch]);
 
   return (
-    <div>
-      <p> Shops:</p>
-      {shops && (
-        <ul>
-          {shops.map((shop) => {
-            return (
-              <li key={`${shop._id}`}>
-                <NavLink to={`${shop._id}`}>{shop.name}</NavLink>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-      {isLoading && <div> завантаженя...</div>}
+    <PageContainer>
+      <ShopsContainer>
+        <p>Shops:</p>
+        {shops && (
+          <ul>
+            {shops.map((shop) => {
+              return (
+                <li key={`${shop._id}`}>
+                  <NavLink to={`${shop._id}`}>{shop.name}</NavLink>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+        {isLoading && <div> завантаженя...</div>}
+      </ShopsContainer>
       <Outlet />
-    </div>
+    </PageContainer>
   );
 }
 

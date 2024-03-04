@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoading, selectMedicines } from "../../redux/selectors";
 import { setMedicines } from "../../redux/catalog/operations";
+import { MedicinesContainer } from "../Container/Container.styled";
 
 function MedicineList() {
   const { shopId } = useParams();
@@ -16,7 +17,7 @@ function MedicineList() {
   }, [dispatch, shopId]);
 
   return (
-    <div>
+    <MedicinesContainer>
       {medicines && (
         <ul>
           {medicines.map((medicine) => {
@@ -30,7 +31,7 @@ function MedicineList() {
         </ul>
       )}
       {isLoading && <div> завантаженя...</div>}
-    </div>
+    </MedicinesContainer>
   );
 }
 
