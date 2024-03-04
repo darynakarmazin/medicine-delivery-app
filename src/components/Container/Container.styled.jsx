@@ -20,7 +20,7 @@ export const ShopsContainer = styled.div`
 
 export const FormContainer = styled.div`
   display: flex;
-  width: 30%;
+  width: 50%;
   height: calc(100vh - 220px);
   flex-direction: column;
   align-items: center;
@@ -51,7 +51,7 @@ export const MedicinesContainer = styled.div`
 
 export const CartContainer = styled.div`
   display: flex;
-  flex: 1;
+  width: 50%;
   height: calc(100vh - 220px);
   flex-direction: column;
   align-items: start;
