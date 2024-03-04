@@ -9,7 +9,7 @@ import {
   PageContainer,
   TotalContainers,
 } from "../components/Container/Container.styled";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { clearCart } from "../redux/cart/cartSlice";
 
 function ShoppingCartPage() {
@@ -22,10 +22,14 @@ function ShoppingCartPage() {
   });
 
   const dispatch = useDispatch();
+  const [totalPrice, setTotalPrice] = useState(0);
 
-  const totalPrice = cartMedicines.reduce((total, medicine) => {
-    return total + Number(medicine.price);
-  }, 0);
+  useEffect(() => {
+    const newTotalPrice = cartMedicines.reduce((total, medicine) => {
+      return total + Number(medicine.price) * (medicine.amount || 1);
+    }, 0);
+    setTotalPrice(newTotalPrice);
+  }, [cartMedicines]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -44,6 +48,7 @@ function ShoppingCartPage() {
         _id: medicine._id,
         title: medicine.title,
         owner: medicine.owner,
+        amount: medicine.amount,
       })),
     };
 

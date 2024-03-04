@@ -1,11 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Counter, Img, MedicineCard, Wrapper } from "./MedicineCartItem.styled";
 import { selectCartMedicines } from "../../redux/selectors";
-import { addToCart, removeFromCart } from "../../redux/cart/cartSlice";
+import {
+  addToCart,
+  removeFromCart,
+  updateQuantity,
+} from "../../redux/cart/cartSlice";
 import { useState } from "react";
 
 function MedicineCartItem({ medicine }) {
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(medicine.amount || 1);
+  console.log(amount);
   const dispatch = useDispatch();
   const cartMedicines = useSelector(selectCartMedicines);
 
@@ -22,6 +27,7 @@ function MedicineCartItem({ medicine }) {
   const handleAmountChange = (event) => {
     const newAmount = parseInt(event.target.value);
     setAmount(newAmount);
+    dispatch(updateQuantity({ _id: medicine._id, quantity: newAmount }));
   };
 
   return (
