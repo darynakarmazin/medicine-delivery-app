@@ -48,7 +48,7 @@ function ShoppingCartPage() {
         _id: medicine._id,
         title: medicine.title,
         owner: medicine.owner,
-        amount: medicine.amount,
+        amount: medicine.amount || 1,
       })),
     };
 

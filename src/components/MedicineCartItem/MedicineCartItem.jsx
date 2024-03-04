@@ -44,6 +44,8 @@ function MedicineCartItem({ medicine }) {
               name="amount"
               value={amount}
               onChange={handleAmountChange}
+              min="1"
+              max="100" //or amount from db
             />
             <button onClick={toggleToCart} type="button">
               {cartMedicines.some((item) => item._id === medicine._id) ? (
