@@ -9,7 +9,7 @@ export const ShopsContainer = styled.div`
   display: flex;
   border-radius: 12px;
   width: 30%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 120px);
   flex-direction: column;
   align-items: center;
   gap: 10px;
@@ -28,7 +28,7 @@ export const MedicinesContainer = styled.div`
   display: flex;
   border-radius: 12px;
   flex: 1;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 120px);
   flex-direction: column;
   align-items: start;
   padding: 10px;

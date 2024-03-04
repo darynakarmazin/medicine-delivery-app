@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoading, selectMedicines } from "../../redux/selectors";
 import { setMedicines } from "../../redux/catalog/operations";
 import { MedicinesContainer } from "../Container/Container.styled";
+import { MedicinesList } from "./MedicineList.styled";
+import MedicineItem from "../MedicineItem/MedicineItem";
 
 function MedicineList() {
   const { shopId } = useParams();
@@ -19,16 +21,11 @@ function MedicineList() {
   return (
     <MedicinesContainer>
       {medicines && (
-        <ul>
+        <MedicinesList>
           {medicines.map((medicine) => {
-            return (
-              <li key={medicine._id}>
-                <p>{medicine.title}</p>
-                <p>{medicine.price}</p>
-              </li>
-            );
+            return <MedicineItem key={medicine._id} medicine={medicine} />;
           })}
-        </ul>
+        </MedicinesList>
       )}
       {isLoading && <div> завантаженя...</div>}
     </MedicinesContainer>
