@@ -7,9 +7,7 @@ import Navigation from "./Navigation/Navigation";
 function App() {
   return (
     <>
-      <header>
-        <Navigation />
-      </header>
+      <Navigation />
       <main>
         <Routes>
           <Route path="/" element={<ShopsPage />}>
