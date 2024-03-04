@@ -7,7 +7,6 @@ export const PageContainer = styled.div`
 
 export const ShopsContainer = styled.div`
   display: flex;
-  border-radius: 12px;
   width: 30%;
   height: calc(100vh - 120px);
   flex-direction: column;
@@ -16,6 +15,7 @@ export const ShopsContainer = styled.div`
   padding: 10px;
   border: 1px solid black;
   border-radius: 12px;
+  overflow-y: scroll;
 `;
 
 export const ShopsTitle = styled.h2`
@@ -26,7 +26,6 @@ export const ShopsTitle = styled.h2`
 
 export const MedicinesContainer = styled.div`
   display: flex;
-  border-radius: 12px;
   flex: 1;
   height: calc(100vh - 120px);
   flex-direction: column;
@@ -34,4 +33,5 @@ export const MedicinesContainer = styled.div`
   padding: 10px;
   border: 1px solid black;
   border-radius: 12px;
+  overflow-y: scroll;
 `;
