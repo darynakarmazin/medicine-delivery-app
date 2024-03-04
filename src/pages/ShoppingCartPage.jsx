@@ -66,6 +66,7 @@ function ShoppingCartPage() {
         address: "",
       });
     } catch (error) {
+      alert("Error:", error);
       console.error("Error:", error);
     }
   };

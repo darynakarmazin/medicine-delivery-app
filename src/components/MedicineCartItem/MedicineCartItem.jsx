@@ -10,7 +10,7 @@ import { useState } from "react";
 
 function MedicineCartItem({ medicine }) {
   const [amount, setAmount] = useState(medicine.amount || 1);
-  console.log(amount);
+
   const dispatch = useDispatch();
   const cartMedicines = useSelector(selectCartMedicines);
 
