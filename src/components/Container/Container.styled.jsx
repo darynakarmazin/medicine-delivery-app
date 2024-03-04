@@ -18,6 +18,12 @@ export const ShopsContainer = styled.div`
   border-radius: 12px;
 `;
 
+export const ShopsTitle = styled.h2`
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.5;
+`;
+
 export const MedicinesContainer = styled.div`
   display: flex;
   border-radius: 12px;

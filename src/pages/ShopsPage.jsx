@@ -1,19 +1,16 @@
-import { NavLink, Outlet } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { selectIsLoading, selectShops } from "../redux/selectors";
+import { Outlet } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setShops } from "../redux/catalog/operations.js";
 import {
   PageContainer,
   ShopsContainer,
+  ShopsTitle,
 } from "../components/Container/Container.styled.jsx";
+import ShopsList from "../components/ShopsList/ShopsList.jsx";
 
 function ShopsPage() {
   const dispatch = useDispatch();
-
-  const isLoading = useSelector(selectIsLoading);
-  const shops = useSelector(selectShops);
-
   useEffect(() => {
     dispatch(setShops());
   }, [dispatch]);
@@ -21,19 +18,8 @@ function ShopsPage() {
   return (
     <PageContainer>
       <ShopsContainer>
-        <p>Shops:</p>
-        {shops && (
-          <ul>
-            {shops.map((shop) => {
-              return (
-                <li key={`${shop._id}`}>
-                  <NavLink to={`${shop._id}`}>{shop.name}</NavLink>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-        {isLoading && <div> завантаженя...</div>}
+        <ShopsTitle>Shops:</ShopsTitle>
+        <ShopsList />
       </ShopsContainer>
       <Outlet />
     </PageContainer>
