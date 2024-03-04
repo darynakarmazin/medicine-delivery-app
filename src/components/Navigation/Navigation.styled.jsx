@@ -28,7 +28,6 @@ export const LogoNavLink = styled(NavLink)`
   align-items: center;
   gap: 12px;
   font-size: 24px;
-  padding: 6px;
 `;
 
 export const NavigationLinks = styled.nav`
