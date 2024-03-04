@@ -15,14 +15,14 @@ export const Img = styled.div`
   display: block;
   height: 200px;
   width: 100%;
-  background-color: #545d6d;
+  background-color: lightgray;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 `;
 
 export const Wrapper = styled.div`
-  height: 120px;
+  height: 130px;
   width: 100%;
   padding: 6px 12px;
   display: flex;
