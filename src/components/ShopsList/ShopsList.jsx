@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-
 import { selectIsLoading, selectShops } from "../../redux/selectors";
 import { ShopList } from "./ShopsList.styled";
 import ShopItem from "../ShopItem/ShopItem";
