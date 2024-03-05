@@ -83,7 +83,6 @@ function ShoppingCartPage() {
               value={formData.name}
               onChange={handleChange}
               required
-              pattern="[A-Za-zА-Яа-яЁё]{2,}"
               title="Name should contain only letters and be at least 2 characters long"
             />
           </label>
@@ -105,7 +104,6 @@ function ShoppingCartPage() {
               value={formData.phone}
               onChange={handleChange}
               required
-              pattern="[0-9]"
               title="Phone number should consist only numbers"
             />
           </label>
@@ -134,7 +132,7 @@ function ShoppingCartPage() {
         </CartContainer>
       </PageContainer>
       <TotalContainers>
-        <p>{`Total price: ${totalPrice}`}</p>
+        <p>{`Total price: ${Math.round(totalPrice * 100) / 100}`}</p>
         <button type="submit">Submit</button>
       </TotalContainers>
     </form>

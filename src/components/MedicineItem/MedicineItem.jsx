@@ -19,8 +19,6 @@ function MedicineItem({ medicine }) {
   const cartMedicines = useSelector(selectCartMedicines);
   const favorites = useSelector(selectFavorites);
 
-  console.log(favorites);
-
   const toggleToCart = () => {
     const isInCart = cartMedicines.some((item) => item._id === medicine._id);
 
