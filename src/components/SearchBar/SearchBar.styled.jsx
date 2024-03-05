@@ -32,8 +32,8 @@ export const SortBtn = styled.button`
   border-radius: 8px;
   background-color: #f0eded;
   color: grey;
-  :hover,
-  :focus {
-    background-color: grey;
+  &:hover,
+  &:focus {
+    background-color: lightgrey;
   }
 `;
