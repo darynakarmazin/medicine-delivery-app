@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const ShopCard = styled(NavLink)`
   display: flex;
-  border-radius: 12px;
   justify-content: center;
   align-items: center;
   padding: 24px;

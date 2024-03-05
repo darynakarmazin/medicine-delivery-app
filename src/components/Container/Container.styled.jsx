@@ -24,11 +24,26 @@ export const FormContainer = styled.div`
   height: calc(100vh - 220px);
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 24px;
   padding: 10px;
   border: 1px solid black;
   border-radius: 12px;
   overflow-y: scroll;
+
+  label {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      display: flex;
+      width: 500px;
+      justify-content: center;
+      align-items: center;
+      padding: 18px 12px;
+      border: 3px solid #94bbe9;
+      border-radius: 12px;
+    }
+  }
 `;
 
 export const ShopsTitle = styled.h2`
