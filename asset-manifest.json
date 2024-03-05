@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/medicine-delivery-app/static/css/main.e6c13ad2.css",
-    "main.js": "/medicine-delivery-app/static/js/main.f1da16ae.js",
+    "main.css": "/medicine-delivery-app/static/css/main.be7e499f.css",
+    "main.js": "/medicine-delivery-app/static/js/main.c36125cb.js",
+    "static/media/logo.svg": "/medicine-delivery-app/static/media/logo.9bc8467138fb396aaa767cd72e575a9f.svg",
     "index.html": "/medicine-delivery-app/index.html",
-    "main.e6c13ad2.css.map": "/medicine-delivery-app/static/css/main.e6c13ad2.css.map",
-    "main.f1da16ae.js.map": "/medicine-delivery-app/static/js/main.f1da16ae.js.map"
+    "static/media/heart-no.svg": "/medicine-delivery-app/static/media/heart-no.0d9b7acfca72f8464f1e8b82be4ccc0c.svg",
+    "static/media/heart-yes.svg": "/medicine-delivery-app/static/media/heart-yes.623a3b874365d724c658e79a860ad4a4.svg",
+    "static/media/search.svg": "/medicine-delivery-app/static/media/search.552248cfe3bd3c3407f987244978bd48.svg",
+    "main.be7e499f.css.map": "/medicine-delivery-app/static/css/main.be7e499f.css.map",
+    "main.c36125cb.js.map": "/medicine-delivery-app/static/js/main.c36125cb.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.f1da16ae.js"
+    "static/css/main.be7e499f.css",
+    "static/js/main.c36125cb.js"
   ]
 }
