@@ -82,24 +82,31 @@ function ShoppingCartPage() {
               name="name"
               value={formData.name}
               onChange={handleChange}
+              required
+              pattern="[A-Za-zА-Яа-яЁё]{2,}"
+              title="Name should contain only letters and be at least 2 characters long"
             />
           </label>
           <label>
             Email:
             <input
-              type="text"
+              type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
+              required
             />
           </label>
           <label>
             Phone:
             <input
-              type="text"
+              type="tel"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
+              required
+              pattern="[0-9]"
+              title="Phone number should consist only numbers"
             />
           </label>
           <label>
@@ -109,6 +116,7 @@ function ShoppingCartPage() {
               name="address"
               value={formData.address}
               onChange={handleChange}
+              required
             />
           </label>
         </FormContainer>

@@ -39,7 +39,8 @@ export const FormContainer = styled.div`
       width: 500px;
       justify-content: center;
       align-items: center;
-      padding: 18px 12px;
+      padding: 14px;
+      font-size: 18px;
       border: 3px solid #94bbe9;
       border-radius: 12px;
     }
