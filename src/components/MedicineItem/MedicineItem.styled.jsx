@@ -9,6 +9,7 @@ export const MedicineCard = styled.li`
   border: 1px solid black;
   border-radius: 12px;
   overflow: hidden;
+  position: relative;
 `;
 
 export const Img = styled.div`
@@ -62,4 +63,11 @@ export const Wrapper = styled.div`
   p {
     font-size: 12px;
   }
+`;
+
+export const Favoritebutton = styled.button`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
 `;
