@@ -28,7 +28,7 @@ The order is saved in the database after the user clicks the “submit” button
 Also app included:
 - the ability to sort medicines by price;
 - the ability to mark medicines as favorites;
-- The cart saving in local storage.
+- the cart saving in local storage.
 
 Notes:
 
