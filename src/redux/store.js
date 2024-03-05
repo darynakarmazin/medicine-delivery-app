@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import medicinesReducer from "./catalog/medicinesSlice";
 import cartReducer from "./cart/cartSlice";
+import favoriteReducer from "./favorite/favoriteSlice";
 import {
   persistStore,
   persistReducer,
@@ -19,12 +20,24 @@ const cartPersistConfig = {
   whitelist: ["cartMedicines"],
 };
 
+const favoritePersistConfig = {
+  key: "favorites",
+  storage,
+  whitelist: ["favorites"],
+};
+
+const persistedFavoriteReducer = persistReducer(
+  favoritePersistConfig,
+  favoriteReducer
+);
+
 const persistedUserReducer = persistReducer(cartPersistConfig, cartReducer);
 
 export const store = configureStore({
   reducer: {
     catalog: medicinesReducer,
     cart: persistedUserReducer,
+    favorite: persistedFavoriteReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
