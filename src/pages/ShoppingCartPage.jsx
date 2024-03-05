@@ -11,6 +11,7 @@ import {
 } from "../components/Container/Container.styled";
 import { useEffect, useState } from "react";
 import { clearCart } from "../redux/cart/cartSlice";
+// import MapComponent from "../components/MapComponent/MapComponent";
 
 function ShoppingCartPage() {
   const cartMedicines = useSelector(selectCartMedicines);
@@ -75,6 +76,7 @@ function ShoppingCartPage() {
     <form onSubmit={handleSubmit}>
       <PageContainer>
         <FormContainer>
+          {/* <MapComponent setFormData={setFormData} /> */}
           <label>
             Name:
             <input
